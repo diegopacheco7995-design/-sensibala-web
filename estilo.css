@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Russo+One&display=swap');
+
+:root {
+  --acento: #2ee66b;
+  --acento-luz: #93f5b3;
+  --acento-oscuro: #157a39;
+  --oro: #ffd23a;
+  --texto: #f2f5f3;
+  --gris: rgba(255, 255, 255, 0.6);
+  --fondo: #030403;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--texto);
+  font-family: 'Chakra Petch', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  background:
+    radial-gradient(70% 45% at 50% 0%, rgba(46, 230, 107, 0.14), transparent 70%),
+    linear-gradient(rgba(46, 230, 107, 0.05) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(90deg, rgba(46, 230, 107, 0.05) 1px, transparent 1px) 0 0 / 34px 34px,
+    var(--fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--acento); }
+
+.contenedor { max-width: 760px; margin: 0 auto; padding: 32px 16px 56px; }
+
+header.barra { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--texto); }
+.marca img { width: 40px; height: 40px; border-radius: 10px; }
+.marca span { font-family: 'Russo One', sans-serif; font-size: 20px; letter-spacing: 0.04em; }
+.marca b { color: var(--acento); font-weight: 400; }
+
+.idiomas { display: flex; gap: 4px; padding: 3px; border-radius: 10px; background: rgba(0, 0, 0, 0.55); border: 1px solid rgba(46, 230, 107, 0.25); }
+.idiomas button {
+  font: 13px 'Russo One', sans-serif; text-transform: uppercase; color: rgba(46, 230, 107, 0.6);
+  background: none; border: 0; padding: 6px 10px; border-radius: 7px; cursor: pointer;
+}
+.idiomas button[aria-pressed='true'] { color: #fff; background: linear-gradient(180deg, var(--acento-luz), var(--acento) 40%, var(--acento-oscuro)); }
+
+.hero { text-align: center; padding: 56px 0 24px; }
+.hero img { width: 148px; height: 148px; border-radius: 32px; box-shadow: 0 0 40px rgba(46, 230, 107, 0.35); }
+.hero h1 { font-family: 'Russo One', sans-serif; font-weight: 400; font-size: clamp(40px, 11vw, 64px); line-height: 1.05; margin: 22px 0 8px; letter-spacing: 0.02em; }
+.hero h1 b { color: var(--acento); font-weight: 400; text-shadow: 0 0 22px rgba(46, 230, 107, 0.6); }
+.hero p { color: var(--gris); font-size: 19px; margin: 0 auto; max-width: 520px; }
+
+.boton {
+  display: inline-block; margin-top: 26px; padding: 14px 26px; border-radius: 12px; text-decoration: none;
+  font: 15px 'Russo One', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; color: #fff;
+  background: linear-gradient(180deg, var(--acento-luz), var(--acento) 40%, var(--acento-oscuro));
+  box-shadow: 0 0 18px rgba(46, 230, 107, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.panel {
+  margin-top: 28px; padding: 22px; border-radius: 16px; border: 2px solid var(--acento);
+  background: radial-gradient(90% 120% at 50% 110%, rgba(46, 230, 107, 0.16), transparent 55%), linear-gradient(180deg, #0b0f0d, #050706);
+  box-shadow: 0 0 16px rgba(46, 230, 107, 0.35);
+}
+
+.funciones { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 28px; }
+.funcion { padding: 16px; border-radius: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); }
+.funcion h3 { margin: 0 0 4px; font: 16px 'Russo One', sans-serif; text-transform: uppercase; color: var(--acento); }
+.funcion p { margin: 0; color: var(--gris); font-size: 15px; }
+
+h1.titulo { font-family: 'Russo One', sans-serif; font-weight: 400; font-size: clamp(28px, 7vw, 38px); margin: 40px 0 4px; }
+.fecha { color: var(--gris); font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; }
+.panel h2 { font: 17px 'Russo One', sans-serif; text-transform: uppercase; color: var(--acento); margin: 22px 0 6px; }
+.panel h2:first-child { margin-top: 0; }
+.panel p, .panel li { color: rgba(255, 255, 255, 0.85); }
+.panel ul { padding-left: 20px; }
+
+footer { margin-top: 40px; text-align: center; color: var(--gris); font-size: 14px; }
+footer nav { display: flex; justify-content: center; gap: 18px; margin-bottom: 10px; flex-wrap: wrap; }
+.aviso { font-size: 13px; max-width: 560px; margin: 0 auto 10px; }
+
+[data-idioma] { display: none; }
+html[lang='es'] [data-idioma='es'], html[lang='pt'] [data-idioma='pt'], html[lang='en'] [data-idioma='en'] { display: revert; }
